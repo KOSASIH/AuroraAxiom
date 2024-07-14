@@ -1,0 +1,54 @@
+// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroraAxiom</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>AuroraAxiom</h1>
+    <button id="predict-btn">Predict Disaster</button>
+    <button id="prevent-btn">Prevent Disaster</button>
+    <button id="mitigate-btn">Mitigate Disaster</button>
+    <div id="result"></div>
+</body>
+</html>
+
+// script.js
+const predictBtn = document.getElementById("predict-btn");
+const preventBtn = document.getElementById("prevent-btn");
+const mitigateBtn = document.getElementById("mitigate-btn");
+const resultDiv = document.getElementById("result");
+
+predictBtn.addEventListener("click", async () => {
+    const response = await fetch("/predict", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ /* input data */ }),
+    });
+    const result = await response.json();
+    resultDiv.innerText = `Predicted disaster: ${result}`;
+});
+
+preventBtn.addEventListener("click", async () => {
+    const response = await fetch("/prevent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ /* input data */ }),
+    });
+    const result = await response.json();
+    resultDiv.innerText = `Prevention measures: ${result}`;
+});
+
+mitigateBtn.addEventListener("click", async () => {
+    const response = await fetch("/mitigate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ /* input data */ }),
+    });
+    const result = await response.json();
+    resultDiv.innerText = `Mitigation measures: ${result}`;
+});
