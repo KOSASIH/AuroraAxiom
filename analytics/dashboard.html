@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.plotly.com/plotly-2.10.1.min.js"></script>
+  </head>
+  <body>
+    <h1>Real-Time Event Analytics</h1>
+    <div id="graph"></div>
+    <script>
+      const graph = document.getElementById('graph');
+      const analytics = new AuroraAxiomAnalytics();
+      analytics.visualize_data().then(fig => {
+        Plotly.plot(graph, fig.data, fig.layout);
+      });
+    </script>
+  </body>
+</html>
