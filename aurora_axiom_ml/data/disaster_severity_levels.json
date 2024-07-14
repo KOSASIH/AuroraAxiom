@@ -1,0 +1,22 @@
+{
+  "1": {
+    "description": "Minimal damage or impact",
+    "color": "#00FF00"
+  },
+  "2": {
+    "description": "Moderate damage or impact",
+    "color": "#FFFF00"
+  },
+  "3": {
+    "description": "Significant damage or impact",
+    "color": "#FFA500"
+  },
+  "4": {
+    "description": "Extensive damage or impact",
+    "color": "#FF0000"
+  },
+  "5": {
+    "description": "Catastrophic damage or impact",
+    "color": "#8B0A1A"
+  }
+}
