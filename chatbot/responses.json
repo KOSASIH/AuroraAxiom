@@ -1,0 +1,12 @@
+{
+  "responses": [
+    {
+      "intent": "greeting",
+      "response": "Hello! How can I assist you today?"
+    },
+    {
+      "intent": "goodbye",
+      "response": "Goodbye! It was nice chatting with you."
+    }
+  ]
+}
