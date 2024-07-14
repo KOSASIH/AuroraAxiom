@@ -12,15 +12,18 @@ class DisasterPredictionModel:
         self.keras_model = Sequential()
 
     def train(self, data):
-        X = data.drop(["target"], axis=1)
-        y = data["target"]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        self.model.fit(X_train, y_train)
-        self.keras_model.add(Dense(64, activation="relu", input_shape=(X.shape[1],)))
-        self.keras_model.add(Dense(32, activation="relu"))
-        self.keras_model.add(Dense(1, activation="sigmoid"))
-        self.keras_model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
-        self.keras_model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+        try:
+            X = data.drop(["target"], axis=1)
+            y = data["target"]
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+            self.model.fit(X_train, y_train)
+            self.keras_model.add(Dense(64, activation="relu", input_shape=(X.shape[1],)))
+            self.keras_model.add(Dense(32, activation="relu"))
+            self.keras_model.add(Dense(1, activation="sigmoid"))
+            self.keras_model.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
+            self.keras_model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+        except Exception as e:
+            raise ModelTrainingError(str(e))
 
     def predict(self, input_data):
         return self.model.predict(input_data)
@@ -33,10 +36,13 @@ class PreventionMeasuresModel:
         self.model = RandomForestClassifier()
 
     def train(self, data):
-        X = data.drop(["target"], axis=1)
-        y = data["target"]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        self.model.fit(X_train, y_train)
+        try:
+            X = data.drop(["target"], axis=1)
+            y = data["target"]
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+            self.model.fit(X_train, y_train)
+        except Exception as e:
+            raise ModelTrainingError(str(e))
 
     def predict(self, input_data):
         return self.model.predict(input_data)
@@ -46,10 +52,13 @@ class MitigationMeasuresModel:
         self.model = RandomForestClassifier()
 
     def train(self, data):
-        X = data.drop(["target"], axis=1)
-        y = data["target"]
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        self.model.fit(X_train, y_train)
+        try:
+            X = data.drop(["target"], axis=1)
+            y = data["target"]
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+            self.model.fit(X_train, y_train)
+        except Exception as e:
+            raise ModelTrainingError(str(e))
 
     def predict(self, input_data):
         return self.model.predict(input_data)
