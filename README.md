@@ -23,7 +23,7 @@ This repository contains the following directories and files:
 
 To get started with the AuroraAxiom project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/AuroraAxiom/AuroraAxiom.git`
+1. Clone the repository: `git clone https://github.com/KOSASIH/AuroraAxiom.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Set up your development environment: `python setup.py`
 4. Run the application: `python app.py`
@@ -32,7 +32,7 @@ To get started with the AuroraAxiom project, follow these steps:
 
 We welcome contributions to the AuroraAxiom project! If you're interested in contributing, please:
 
-1. Fork the repository: `git fork https://github.com/AuroraAxiom/AuroraAxiom.git`
+1. Fork the repository: `git fork https://github.com/KOSASIH/AuroraAxiom.git`
 2. Create a new branch: `git branch my-feature`
 3. Make your changes: `git add . and git commit -m "My feature"`
 4. Submit a pull request: `git push origin my-feature`
