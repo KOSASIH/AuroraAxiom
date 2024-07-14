@@ -1,0 +1,12 @@
+{
+  "intents": [
+    {
+      "name": "greeting",
+      "examples": ["hello", "hi", "hey"]
+    },
+    {
+      "name": "goodbye",
+      "examples": ["bye", "see you later", "goodbye"]
+    }
+  ]
+}
