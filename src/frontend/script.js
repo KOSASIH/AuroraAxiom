@@ -1,13 +1,18 @@
 // src/frontend/script.js
 import * as tf from "@tensorflow/tfjs";
 import * as Plotly from "plotly.js";
+import * as SocketIO from "socket.io-client";
+
+const socket = SocketIO();
 
 const predictBtn = document.getElementById("predict-btn");
 const preventBtn = document.getElementById("prevent-btn");
 const mitigateBtn = document.getElementById("mitigate-btn");
 const visualizeBtn = document.getElementById("visualize-btn");
+const monitorBtn = document.getElementById("monitor-btn");
 const resultDiv = document.getElementById("result");
 const plotDiv = document.getElementById("plot");
+const monitorDiv = document.getElementById("monitor");
 
 predictBtn.addEventListener("click", async () => {
     const response = await fetch("/predict", {
@@ -53,4 +58,11 @@ visualizeBtn.addEventListener("click", async () => {
         },
     ];
     Plotly.newPlot(plotDiv, plotData);
+});
+
+monitorBtn.addEventListener("click", () => {
+    socket.emit("start_monitoring");
+    socket.on("realtime_data", (data) => {
+        monitorDiv.innerText = `Realtime data: ${data}`;
+    });
 });
