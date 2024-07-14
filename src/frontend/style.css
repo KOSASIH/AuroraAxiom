@@ -1,0 +1,10 @@
+// src/frontend/style.css
+#plot {
+    width: 800px;
+    height: 600px;
+}
+
+#monitor {
+    width: 400px;
+    height: 200px;
+}
