@@ -1,0 +1,7 @@
+"id","name","latitude","longitude","timestamp","category","severity"
+1,"Hurricane Irma",25.7743,-80.1937,2017-09-10 12:00:00,"Hurricane",5
+2,"Wildfire California",37.7749,-122.4194,2018-07-23 14:00:00,"Wildfire",4
+3,"Earthquake Mexico",19.4326,-99.1332,2017-09-19 13:14:00,"Earthquake",3
+4,"Tornado Alabama",32.3615,-86.2791,2019-03-03 16:00:00,"Tornado",2
+5,"Flood Bangladesh",23.8103,90.4125,2017-08-15 10:00:00,"Flood",1
+...
