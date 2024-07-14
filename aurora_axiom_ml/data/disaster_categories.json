@@ -1,0 +1,22 @@
+{
+  "Hurricane": {
+    "description": "A tropical cyclone with sustained winds of 74 mph or higher",
+    "severity_levels": [1, 2, 3, 4, 5]
+  },
+  "Wildfire": {
+    "description": "An uncontrolled fire occurring in wildland areas",
+    "severity_levels": [1, 2, 3, 4]
+  },
+  "Earthquake": {
+    "description": "A sudden release of energy in the Earth's crust",
+    "severity_levels": [1, 2, 3]
+  },
+  "Tornado": {
+    "description": "A rotating column of air that touches the ground",
+    "severity_levels": [1, 2]
+},
+  "Flood": {
+    "description": "An overflow of water that submerges land",
+    "severity_levels": [1]
+  }
+}
